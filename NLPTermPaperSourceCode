@@ -56,6 +56,6 @@ roberta_model.train_model(train_df)
 
 # Evaluate
 predictions_roberta, _ = roberta_model.predict(holdback_df['text'].tolist())
-print("\n--- ROBERTA WINNER RESULTS ---")
+print("\n--- RESULTS ---")
 print(classification_report(holdback_df['labels'], predictions_roberta, target_names=['Human', 'AI-Base', 'AI-Fine-tuned']))
 print(f"RoBERTa Macro F1 Score: {f1_score(holdback_df['labels'], predictions_roberta, average='macro'):.4f}")
